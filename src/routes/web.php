@@ -14,6 +14,10 @@
 
 
 Route::get('/couponapp','couponcontroller@index')->name('coupon.index');
+Route::get('/couponapp/coupon','couponcontroller@show')->name('show');
+Route::get('couponapp/coupon/archive','couponcontroller@archive')->name('archive');
+Route::get('couponapp/coupon/create','couponcontroller@create')->name('create');
+Route::post('couponapp/coupon/create','couponcontroller@post');
 Route::get('/home', 'HomeController@index')->name('home');
 
 

@@ -1,8 +1,8 @@
-@extends('layouts.app')
+@extends('layouts.template')
 
-@section('content')
+@section('main')
 <div class="index_container">
-     <a href="#">
+<a href="{{route('show')}}">
         <img src="imgs/coupons.png" alt="クーポン管理画面">
         <p>クーポン管理一覧</p>
     </a>
