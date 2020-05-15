@@ -18,10 +18,11 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
     <header>
-        <h1>coupon app</h1>
+    <a href="{{ route('index') }}"><h1>coupon app</h1></a>
     </header>
     <main>
         @yield('main')
