@@ -11,12 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-Auth::routes();
 
+Route::get('/couponapp','couponcontroller@index')->name('coupon.index');
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/couponapp/coupon/index','CouponController@index')->name('coupon.index');
+
+Auth::routes();

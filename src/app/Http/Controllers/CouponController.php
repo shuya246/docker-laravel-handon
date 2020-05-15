@@ -7,6 +7,6 @@ use Illuminate\Http\Request;
 class CouponController extends Controller
 {
     public function index(){
-        return "hello world";
+        return view('index');
     }
 }
