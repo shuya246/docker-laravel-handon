@@ -9,7 +9,7 @@
 </div>
 
 <div class="index_container">
-    <a href="#">
+<a href="{{ route('empindex') }}">
         <img src="imgs/employees.png" alt="従業員管理画面">
         <p>従業員管理画面</p>
     </a>

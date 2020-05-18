@@ -12,13 +12,17 @@
 */
 
 
+Route::group(['middleware' => 'owner_auth'], function(){
+    Route::get('/couponapp','couponcontroller@index')->name('index');
+    Route::get('/couponapp/coupon','couponcontroller@show')->name('show');
+    Route::get('couponapp/coupon/archive','couponcontroller@archive')->name('archive');
+    Route::get('couponapp/coupon/create','couponcontroller@showCreate')->name('showCreate');
+    Route::post('couponapp/coupon/create','couponcontroller@create')->name('create');
+    Route::get('couponapp/employee','employeecontroller@index')->name('empindex');
+    Route::get('couponapp/employee/archive','employeecontroller@archive')->name('emparchive');
 
-Route::get('/couponapp','couponcontroller@index')->name('index');
-Route::get('/couponapp/coupon','couponcontroller@show')->name('show');
-Route::get('couponapp/coupon/archive','couponcontroller@archive')->name('archive');
-Route::get('couponapp/coupon/create','couponcontroller@showCreate')->name('showCreate');
-Route::post('couponapp/coupon/create','couponcontroller@create')->name('create');
-Route::get('/home', 'HomeController@index')->name('home');
+});
+Route::get('couponapp/home', 'HomeController@index')->name('home');
 
 
 Auth::routes();

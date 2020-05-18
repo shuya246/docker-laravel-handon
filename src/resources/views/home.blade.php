@@ -20,4 +20,5 @@
         </div>
     </div>
 </div>
+<a href="{{ route('index') }}">機能一覧</a>
 @endsection
