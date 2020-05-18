@@ -1,12 +1,12 @@
 @extends('layouts.template')
 
 @section('main')
-<form action="{{ route('archive') }}" method="post">
+<form action="{{ route('create') }}" method="POST">
     @csrf
 <label>タイトル</label>
 <input type="text" name="title" value="">
 <label>説明</label>
-<textarea name="introductoin"></textarea>
+<textarea name="introduction"></textarea>
 <label>本文</label>
 <textarea name="body"></textarea>
 <label>回数</label>

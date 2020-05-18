@@ -18,19 +18,19 @@ class CouponController extends Controller
         
         return view('archive', compact('coupons'));
     }
-    public function create(){
+    public function showCreate(){
         return view('create');
     }
-    public function post(Request $request , Coupon $coupon){
+    public function create(Request $request , Coupon $coupon){
         $coupon = new Coupon();
         $coupon->title = $request->title;
-        $coupon->introduce = $request->introduce;
+        $coupon->introduction = $request->introduction;
         $coupon->body = $request->body;
         $coupon->time = $request->time;
         $coupon->start = $request->start;
         $coupon->end = $request->end;
         $coupon->memo = $request->memo;
-        $coupons->save();
-        return redirect()->route('index');
+        $coupon->save();
+        return redirect()->route('archive');
     }
 }
