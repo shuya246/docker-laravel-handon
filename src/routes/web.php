@@ -20,9 +20,9 @@ Route::group(['middleware' => 'owner_auth'], function(){
     Route::post('couponapp/coupon/create','couponcontroller@create')->name('create');
     Route::get('couponapp/employee','employeecontroller@index')->name('empindex');
     Route::get('couponapp/employee/archive','employeecontroller@archive')->name('emparchive');
-
+    Route::get('couponapp/employee/create', 'employeecontroller@showCreate')->name('empshowCreate');
+    Route::post('couponapp/employee/create', 'employeecontroller@create')->name('empcreate');
 });
 Route::get('couponapp/home', 'HomeController@index')->name('home');
-
 
 Auth::routes();

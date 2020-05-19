@@ -27,5 +27,7 @@
     <main>
         @yield('main')
     </main>
-    
+    <footer>
+    <a href="{{ route('logout') }}">ログアウト</a>
+    </footer>
 </body>
