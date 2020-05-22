@@ -33,4 +33,9 @@ class CouponController extends Controller
         $coupon->save();
         return redirect()->route('archive');
     }
+    public function delete(Request $request){
+        // dd($request);
+        Coupon::find($request->id)->delete();
+        return view('delete');
+    }
 }

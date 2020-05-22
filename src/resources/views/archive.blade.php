@@ -16,5 +16,9 @@
 <p>{{ $coupon->end }}</p>
 <h3>補足</h3>
 <p>{{ $coupon->memo }}</p>
+<form action="{{ route('delete', $coupon->id) }}" method="POST">
+    @csrf
+    <input type="submit" value="削除する">
+</form>
  @endforeach   
 @endsection

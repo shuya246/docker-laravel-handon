@@ -29,4 +29,9 @@ class EmployeeController extends Controller
         $user->save();
         return redirect()->route('emparchive');
     }
+    public function destroy($id){
+        $users = user::find($id);
+        $users -> delete();
+        return redirect()->route('emparchive');
+    }
 }
