@@ -21,17 +21,16 @@ class LoginController extends Controller
 
     use AuthenticatesUsers;
 
-    protected function loggedOut(Request $request)
-    {
-        return redirect()->route('login');
-    }
-
+    
     /**
      * Where to redirect users after login.
      *
      * @var string
      */
-    protected $redirectTo = '/couponapp';
+    // protected $redirectTo = '/home';
+    public function redirectTo(){
+        return '/couponapp';
+    }
 
     /**
      * Create a new controller instance.
@@ -42,4 +41,12 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+    protected function loggedOut(Request $request)
+    {
+        return redirect('login');
+    }
+    // public function redirectPath()
+    // {
+    //     return '/couponapp';
+    // }
 }

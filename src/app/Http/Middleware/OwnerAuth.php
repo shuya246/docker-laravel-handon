@@ -18,6 +18,6 @@ class OwnerAuth
         if (auth()->check() && auth()->user()->is_owner) {
             return $next($request);
         }
-        return $next('couponapp/coupon/archive');
+        return $next($request);
     }
 }

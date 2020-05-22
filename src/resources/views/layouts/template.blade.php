@@ -29,5 +29,6 @@
     </main>
     <footer>
     <a href="{{ route('logout') }}">ログアウト</a>
+    {{-- <a href="#">ログアウト</a> --}}
     </footer>
 </body>
