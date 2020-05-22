@@ -20,6 +20,7 @@ class EmployeeController extends Controller
         return view('empcreate');
     }
     public function create(Request $request, User $user){
+        
         $user = new User();
         $user->name = $request->name;
         $user->email = $request->email;
@@ -29,9 +30,8 @@ class EmployeeController extends Controller
         $user->save();
         return redirect()->route('emparchive');
     }
-    public function destroy($id){
-        $users = user::find($id);
-        $users -> delete();
-        return redirect()->route('emparchive');
+    public function delete(Request $request){
+        User::find($request->id)->delete();
+        return view('empdelete');
     }
 }

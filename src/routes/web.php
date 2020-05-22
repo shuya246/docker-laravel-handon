@@ -27,7 +27,7 @@ Route::group(['middleware' => 'auth'], function(){
     Route::get('couponapp/employee/archive','employeecontroller@archive')->name('emparchive');
     Route::get('couponapp/employee/create', 'employeecontroller@showCreate')->name('empshowCreate');
     Route::post('couponapp/employee/create', 'employeecontroller@create')->name('empcreate');
-    Route::get('couponapp/employee/delete/', 'employeecontroller@delete')->name('empdelete');
+    Route::post('couponapp/employee/delete/{id}', 'employeecontroller@delete')->name('empdelete');
 });
 
 Route::get('couponapp/home', 'HomeController@index')->name('home');

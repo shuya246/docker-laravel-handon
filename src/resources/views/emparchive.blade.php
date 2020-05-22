@@ -13,6 +13,17 @@
         <td>{{ $user->email }}</td>
         <td>{{ $user->role }}</td>
         </tr>
-     </table>
+    </table>
+<form action="{{ route('empdelete', $user->id) }}" method="POST">
+    @csrf
+
+    <input class="btn btn-danger" type="submit" value="削除する" >
+</form>
+{{-- <form action="{{ route('empdelete') }}" method="POST">
+    @csrf
+    @method("DELETE")
+    <input type="hidden" name="id" value="{{ $user->id }}">
+    <button class="btn btn-danger" type="submit">削除</button>
+</form> --}}
  @endforeach   
 @endsection
