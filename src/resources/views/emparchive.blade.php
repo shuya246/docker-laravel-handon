@@ -2,7 +2,8 @@
 
 @section('main')
  @foreach ($users as $user)
-     <table>
+ <div class="container">
+     <table class="table">
         <tr>
             <th>氏名</th>
             <th>Eメール</th>
@@ -14,11 +15,12 @@
         <td>{{ $user->role }}</td>
         </tr>
     </table>
-<form action="{{ route('empdelete', $user->id) }}" method="POST">
-    @csrf
-
-    <input class="btn btn-danger" type="submit" value="削除する" >
-</form>
+    <form action="{{ route('empdelete', $user->id) }}" method="POST">
+        @csrf
+    
+        <input class="btn btn-danger" type="submit" value="削除する" >
+    </form>
+</div>
 {{-- <form action="{{ route('empdelete') }}" method="POST">
     @csrf
     @method("DELETE")

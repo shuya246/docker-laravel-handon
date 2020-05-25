@@ -28,8 +28,18 @@ class LoginController extends Controller
      * @var string
      */
     // protected $redirectTo = '/home';
+    // public function redirectTo(){
+    //     return '/couponapp';
+    // }
     public function redirectTo(){
-        return '/couponapp';
+        $role = $this->guard()->user()->role;
+        if($role === 'owner'){
+            return '/couponapp';
+        }
+        if($role === 'staff'){
+            return '/couponapp/coupon/archive';
+        }
+        return '/register';
     }
 
     /**
