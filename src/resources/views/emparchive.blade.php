@@ -20,6 +20,12 @@
     
         <input class="btn btn-danger" type="submit" value="削除する" >
     </form>
+    <form action="#" method="POST">
+        @csrf
+        @method('PATCH')
+    <input type="hidden" name="id" value="{{ $user->id }}">
+    <button class="btn btn-info">編集</button>
+    </form>
 </div>
 {{-- <form action="{{ route('empdelete') }}" method="POST">
     @csrf

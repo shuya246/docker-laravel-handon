@@ -10,7 +10,11 @@
 <label>パスワード</label>
 <input type="password" name="password" value="">
 <label>権限</label>
-<input type="text" name="role" value="" placeholder="owner or staff">
+{{-- <input type="text" name="role" value="" placeholder="owner or staff"> --}}
+<select name="role">
+    <option value="owner">owner</option>
+    <option value="staff">staff</option>
+</select>
 <input type="submit" value="登録する">
 </form>
 @endsection

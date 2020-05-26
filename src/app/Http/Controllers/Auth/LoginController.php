@@ -37,7 +37,7 @@ class LoginController extends Controller
             return '/couponapp';
         }
         if($role === 'staff'){
-            return '/couponapp/coupon/archive';
+            return 'couponnapp/coupon/for_staff';
         }
         return '/register';
     }

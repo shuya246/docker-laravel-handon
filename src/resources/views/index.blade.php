@@ -1,6 +1,9 @@
 @extends('layouts.template')
 
 @section('main')
+<div class="text-center">
+<h3>こんにちは　{{$user->name}}さん</h3>
+</div>
 <div class="index_container">
 <a href="{{route('show')}}">
         <img src="imgs/coupons.png" alt="クーポン管理画面">
