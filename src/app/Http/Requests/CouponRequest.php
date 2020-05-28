@@ -30,6 +30,7 @@ class CouponRequest extends FormRequest
             'body' => 'required',
             'time' => 'required|int',
             'start' =>'required|date|after_or_equal:today',
+            'end' => 'required|date|after_or_equal:today'
         ];
     }
 

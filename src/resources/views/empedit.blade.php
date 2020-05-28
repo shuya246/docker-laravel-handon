@@ -19,14 +19,26 @@
                 </tr>
                 <tr>
                 <td><input type="text" name="name" value="{{ $users->name }}"></td>
-                <td><input type="text" name="email" value="{{ $users->email }}"></td>
-                <td><input type="password" name="password" value="{{ $users->password }}"></td>
+                @if ($errors->has('name'))
+                <tr><td>{{ $errors->first('name') }}</td></tr>
+                @endif
+                <td><input type="text" name="email" value="{{ $users->email }}"></tr>
+                    @if ($errors->has('email'))
+                <tr><td>{{ $errors->first('email') }}</td></tr>
+                    @endif
+                <td><input type="password" name="password" value=""></td>
+                @if ($errors->has('password'))
+                <tr><td>{{ $errors->first('password') }}</td></tr>
+                @endif
                 <td>
                     <select name="role">
                         <option value="owner">owner</option>
                         <option value="staff">staff</option>
                     </select>
                 </td>
+                @if ($errors->has('role'))
+            <tr><td>{{ $errors->first('role') }}</td></tr>
+                @endif
                 </tr>
             </table>
         </div>

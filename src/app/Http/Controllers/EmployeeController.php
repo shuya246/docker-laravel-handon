@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use Illuminate\Support\Facades\Hash;
+use App\Http\Requests\EmployeeRequest;
 
 class EmployeeController extends Controller
 {
@@ -19,7 +20,7 @@ class EmployeeController extends Controller
     public function showCreate(){
         return view('empcreate');
     }
-    public function create(Request $request, User $user){
+    public function create(EmployeeRequest $request, User $user){
         
         $user = new User();
         $user->name = $request->name;
@@ -37,9 +38,8 @@ class EmployeeController extends Controller
         $users = User::find($id);
         return view('empedit',compact('users'));
     }
-    public function update(Request $request){
+    public function update(EmployeeRequest $request){
         $users = User::find($request->id);
-        // dd($users);
         $users->name = $request->name;
         $users->email = $request->email;
         $users->password = Hash::make($request->password);
@@ -49,15 +49,3 @@ class EmployeeController extends Controller
     }
 }
 
-//     if($request->action === 'back'){
-    //         return redirect()->route('emparchive');
-    //     }else{
-    //         $user = User::find($id);
-    //         $user->name = $request->name;
-    //         $user->email = $request->email;
-    //         $user->password = Hash::make($request->password);
-    //         $user->role = $request->role;
-    //         $user->save();
-    //         return redirect()->route('emparchive');
-    //     }
-    
