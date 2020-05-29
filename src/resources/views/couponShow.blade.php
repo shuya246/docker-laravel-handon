@@ -1,8 +1,13 @@
 @extends('layouts.template')
 
 @section('main')
- <h2>クーポン管理画面</h2>
-<a href="{{ route('archive') }}">クーポン一覧</a>
-<a href="{{ route('showCreate') }}">クーポン新規作成</a>
- <a href="#">クーポン削除</a>
+<div class="container">
+    
+        <h3>クーポン管理画面</h3>
+            <div class="list-group">
+            <a href="{{ route('archive') }}" class="list-group-item list-group-item-action">クーポン一覧</a>
+            <a href="{{ route('showCreate') }}"class="list-group-item list-group-item-action">クーポン新規作成</a>
+            </div>
+    
+</div>
 @endsection
